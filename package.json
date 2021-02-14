@@ -1,0 +1,24 @@
+{
+  "name": "burgatory",
+  "version": "1.0.0",
+  "description": "Your one and only burger app.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puentebravo/Burgatory.git"
+  },
+  "author": "C Puente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puentebravo/Burgatory/issues"
+  },
+  "homepage": "https://github.com/puentebravo/Burgatory#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1"
+  }
+}
