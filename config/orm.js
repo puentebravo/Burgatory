@@ -8,5 +8,12 @@ const orm = {
       cb(res);
     });
   },
+  insertOne(forminput, cb) {
+    const query = "INSERT INTO burgers (burgerName) VALUES (?);";
+    connection.query(query, [forminput], (err, res) => {
+      if (err) throw err;
+      cb(res);
+    });
+  },
   
 };
