@@ -22,5 +22,14 @@ router.put("/api/burgers/:id", (req, res) => {
       return res.status(404).end();
     }
     res.status(200).end();
-  })
+  });
 });
+
+router.delete("/api/burgers/:id", (req, res) => {
+  burger.deleteOne(req.params.id, (result) => {
+    if (result.changedRows === 0) {
+      return res.status(404).end();
+    }
+    res.status(200).end();
+  })
+})
