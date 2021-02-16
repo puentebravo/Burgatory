@@ -22,4 +22,14 @@ const orm = {
       cb(res);
     });
   },
+  deleteOne(dataId, cb) {
+    const query = "DELETE FROM burgers WHERE id = ?";
+    connection.query(query, [dataId], (err, res) => {
+      if (err) throw err;
+      cb(res);
+    });
+  },
 };
+
+
+module.exports = orm
