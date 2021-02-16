@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
 router.post("/api/burgers", (req, res) => {
   burger.insertOne(req.body.burgerName, (result) => {
-    res.json({ id: result.id });
+    res.json(result);
   });
 });
 
@@ -31,5 +31,7 @@ router.delete("/api/burgers/:id", (req, res) => {
       return res.status(404).end();
     }
     res.status(200).end();
-  })
-})
+  });
+});
+
+module.exports = router;
