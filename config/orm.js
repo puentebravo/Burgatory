@@ -15,5 +15,11 @@ const orm = {
       cb(res);
     });
   },
-  
+  updateOne(dataId, cb) {
+    const query = "UPDATE burgers SET devoured = true WHERE id = ?";
+    connection.query(query, [dataId], (err, res) => {
+      if (err) throw err;
+      cb(res);
+    });
+  },
 };
