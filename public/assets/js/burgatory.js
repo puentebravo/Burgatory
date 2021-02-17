@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // };
 
         fetch(`api/burgers/${id}`, {
-          method: "PUT",
+          method: 'PUT',
           headers: {
-            Accept: "applicaton/json",
-            "Content Type": "application/json",
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
           },
         }).then((response) => {
           if (response.ok) {
