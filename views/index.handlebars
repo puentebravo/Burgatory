@@ -7,7 +7,7 @@
                     <Ul>
                         {{#each burgers}}
                         {{#unless devoured}}
-                        {{> burgers/burgerblock}}
+                        {{> burgers/burgerblock devoured=false}}
                         {{/unless}}
                         {{#each}}
                     </Ul>
@@ -32,6 +32,13 @@
                 <div class="card-body">
                     <h5 class="card-title glow">Devoured</h5>
                     <h6 class="card-subtitle text-center">Hoo boy, these were good eatin'</h6>
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        {{> burgers/burgerblock devoured=true}}
+                        {{/if}}
+                        {{#each}}
+                    </ul>
                 </div>
             </div>
         </div>
