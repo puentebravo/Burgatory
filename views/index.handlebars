@@ -2,25 +2,37 @@
     <div class="row align-items-center">
         <div class="col lg-3">
             <div class="card">
-               <div class="card-body">
-                   <h5 class="card-title glow">Burgers On Order</h5>
-               </div> 
+                <div class="card-body">
+                    <h5 class="card-title glow">Burgers On Order</h5>
+                    <Ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        {{> burgers/burgerblock}}
+                        {{/unless}}
+                        {{#each}}
+                    </Ul>
+                </div>
             </div>
         </div>
         <div class="col lg-3 offset-lg-1">
             <div class="card">
-               <div class="card-body">
-                   <h5 class="card-title glow">Menu:</h5>
-                   <h6 class="card-subtitle text-center">Pick your favorite, or custom order!</h6>
-               </div> 
+                <div class="card-body">
+                    <h5 class="card-title glow">The Counter</h5>
+                    <h6 class="card-subtitle text-center">Enter Your Order!</h6>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Your Dream Burger"
+                            aria-label="Your dream burger" aria-describedby="Submit Button">
+                        <button class="btn btn-outline-warning" type="button" id="burgerBtn">Stack it up!</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col lg-3 offset-lg-1">
             <div class="card">
-               <div class="card-body">
-                   <h5 class="card-title glow">Devoured</h5>
-                   <h6 class="card-subtitle text-center">Hoo boy, these were good eatin'</h6>
-               </div> 
+                <div class="card-body">
+                    <h5 class="card-title glow">Devoured</h5>
+                    <h6 class="card-subtitle text-center">Hoo boy, these were good eatin'</h6>
+                </div>
             </div>
         </div>
     </div>
