@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 
 document.addEventListener("DOMContentLoaded", (event) => {
   if (event) {
@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const eatBtns = document.querySelectorAll(".eat-button");
 
-  if (eatBtns) {
     eatBtns.forEach((button) => {
       button.addEventListener("click", (e) => {
         const id = e.target.getAttribute("data-id");
@@ -35,28 +34,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
       });
     });
-  }
+  
 
   const burgerBtn = document.getElementById("burgerBtn");
 
-  if (burgerBtn) {
     burgerBtn.addEventListener("click", (e) => {
       e.preventDefault();
       const newBurger = {
         burgerName: document.getElementById("orderForm").value.trim(),
       };
-      fetch("api/burgers", {
-        method: "POST",
+      
+      fetch('/api/burgers', {
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
+
+        // make sure to serialize the JSON body
         body: JSON.stringify(newBurger),
       }).then(() => {
+        // Empty the form
         document.getElementById("orderForm").value = "";
+
+        // Reload the page so the user can see the new quote
         console.log("Burger loaded. Order up!");
         location.reload();
       });
     });
-  }
 });
