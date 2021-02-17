@@ -37,16 +37,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  const burgerBtn = document.getElementById("burgerBtn")
+  const burgerBtn = document.getElementById("burgerBtn");
 
   if (burgerBtn) {
     burgerBtn.addEventListener("click", (e) => {
       e.preventDefault();
       const newBurger = {
-        burgerName: document.getElementById("orderForm").value.trim()
-      }
-    })
-    
+        burgerName: document.getElementById("orderForm").value.trim(),
+      };
+      fetch("api/burgers", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content Type": "application/json",
+        },
+        body: JSON.stringify(newBurger),
+      }).then(() => {
+        document.getElementById("orderForm").value = "";
+        console.log("Burger loaded. Order up!");
+        location.reload();
+      });
+    });
   }
-
 });
