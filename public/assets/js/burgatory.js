@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.info("DOM loaded");
   }
 
+  // Update function/click listener placement loop and fetch request
+
   const eatBtns = document.querySelectorAll(".eat-button");
 
   eatBtns.forEach((button) => {
@@ -28,6 +30,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
+  // Create function: listener and fetch request
+
   const burgerBtn = document.getElementById("burgerBtn");
 
   burgerBtn.addEventListener("click", (e) => {
@@ -50,6 +54,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       location.reload();
     });
   });
+
+// Delete Function: click listener loop and fetch request
 
   const trashBtn = document.querySelectorAll(".delete-burger");
 
