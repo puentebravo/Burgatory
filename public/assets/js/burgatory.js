@@ -8,11 +8,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   eatBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
       const id = e.target.getAttribute("data-id");
-      // const devour = e.target.getAttribute("data-devour");
-
-      // const newState = {
-      //   devoured: devour,
-      // };
 
       fetch(`api/burgers/${id}`, {
         method: "PUT",
@@ -48,13 +43,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         "Content-Type": "application/json",
       },
 
-      // make sure to serialize the JSON body
       body: JSON.stringify(newBurger),
     }).then(() => {
-      // Empty the form
       document.getElementById("orderForm").value = "";
-
-      // Reload the page so the user can see the new quote
       console.log("Burger loaded. Order up!");
       location.reload();
     });
@@ -67,15 +58,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const id = e.target.getAttribute("data-id");
 
       fetch(`/api/burgers/${id}`, {
-        method: 'DELETE',
+        method: "DELETE",
       }).then((res) => {
         console.log(res);
         console.log(`Burger no. ${id} trashed.`);
-
-        // Reload the page
         location.reload();
       });
-
     });
   });
 });
