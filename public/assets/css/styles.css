@@ -1,5 +1,10 @@
-body {
+html {
   background-image: url("../images/burgatory.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: white;
 }
 
@@ -14,7 +19,8 @@ body {
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 5px 10px #eeeeee, 0 5px 20px #000000, 0 5px 30px #000000,
-      0 5px 40px #000000, 0 5px 50px #9554b3, 0 5px 60px #9554b3, 0 5px 70px #9554b3;
+      0 5px 40px #000000, 0 5px 50px #9554b3, 0 5px 60px #9554b3,
+      0 5px 70px #9554b3;
   }
   to {
     text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
