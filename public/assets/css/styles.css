@@ -1,4 +1,4 @@
-html {
+body {
   background-image: url("../images/burgatory.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -8,8 +8,15 @@ html {
   color: white;
 }
 
+.row {
+  background-color: rgba(0, 0, 0, 0.0)
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
 .glow {
-  font-size: 70px;
   color: #ffffff;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
