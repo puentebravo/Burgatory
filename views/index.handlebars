@@ -1,22 +1,8 @@
 <div class="container">
     <div class="row align-items-center">
+        <div class="col lg-4"></div>
         <div class="col lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title glow">Burgers On Order</h5>
-                    <h6 class="card-subtitle text-center">Hot and fresh!</h6>
-                    <Ul>
-                        {{#each burgers}}
-                        {{#unless devoured}}
-                        {{> burgers/burgerblock devoured=false}}
-                        {{/unless}}
-                        {{#each}}
-                    </Ul>
-                </div>
-            </div>
-        </div>
-        <div class="col lg-3 offset-lg-1">
-            <div class="card">
+            <div class="card border-0">
                 <div class="card-body">
                     <h5 class="card-title glow">The Counter</h5>
                     <h6 class="card-subtitle text-center">Enter Your Order!</h6>
@@ -28,17 +14,39 @@
                 </div>
             </div>
         </div>
-        <div class="col lg-3 offset-lg-1">
-            <div class="card">
+        <div class="col lg-4"></div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col lg-5">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h5 class="card-title glow">Burgers On Order</h5>
+                    <h6 class="card-subtitle text-center">Hot and fresh!</h6>
+                    <br>
+                    <br>
+                    <Ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        {{> burgerblock}}
+                        {{/unless}}
+                        {{/each}}
+                    </Ul>
+                </div>
+            </div>
+        </div>
+        <div class="col lg-5 offset-lg-1">
+            <div class="card border-0">
                 <div class="card-body">
                     <h5 class="card-title glow">Devoured</h5>
                     <h6 class="card-subtitle text-center">Hoo boy, these were good eatin'</h6>
+                    <br>
+                    <br>
                     <ul>
                         {{#each burgers}}
                         {{#if devoured}}
-                        {{> burgers/burgerblock devoured=true}}
+                        {{> burgerblock}}
                         {{/if}}
-                        {{#each}}
+                        {{/each}}
                     </ul>
                 </div>
             </div>
